@@ -1,0 +1,11 @@
+#version 460
+
+layout(set = 0, binding = 0) buffer Input {
+    uint[] data;
+};
+
+void main() {
+    uint i = gl_GlobalInvocationID.x;
+
+    data[i] = 1;
+}
