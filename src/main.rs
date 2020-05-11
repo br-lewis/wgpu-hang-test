@@ -171,6 +171,6 @@ fn make_buffer(device: &wgpu::Device, data: &[u32]) -> (wgpu::Buffer, wgpu::Buff
 }
 
 fn shader() -> Vec<u32> {
-    let cs = include_bytes!(concat!(env!("OUT_DIR"), "/", "shader.comp.spv"));
+    let cs = include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/shader/", "shader.comp.spv"));
     wgpu::read_spirv(std::io::Cursor::new(&cs[..])).expect("error reading shader")
 }
